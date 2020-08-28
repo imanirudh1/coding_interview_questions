@@ -1,6 +1,8 @@
 arr=[1,3,2,2]
 target=4
 def pair_sum(arr,target):
+    if len(arr)<2:
+        return
     seen=set()
     output=set()
     for i in arr:
