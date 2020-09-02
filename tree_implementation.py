@@ -32,5 +32,6 @@ def getRightChild(root):
 a=BinaryTree(5)
 print(a)
 insertLeft(a,2)
+insertLeft(a,3)
 insertRight(a,6)
 print(a)
