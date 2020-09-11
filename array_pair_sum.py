@@ -1,4 +1,4 @@
-arr=[1,3,2,2]
+arr=[1,3,2,2,5,6]
 target=4
 def pair_sum(arr,target):
     if len(arr)<2:
