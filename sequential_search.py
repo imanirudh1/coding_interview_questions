@@ -11,8 +11,8 @@ def seq_search(arr,ele):
     return found        
 
 print(seq_search(arr,6))
-# input array must be sorted
-
+# For Sorted Array we can optimize our code 
+# (input array must be sorted)
 # def seq_search(arr,ele):
 #     pos=0
 #     found=False
