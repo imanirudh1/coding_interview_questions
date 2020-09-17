@@ -20,7 +20,10 @@ for r in range(row):
                 parent[r][c]=(r,c-1)
             min_path_sum[r][c]=min(top,left)+grid[r][c]             
 print(min_path_sum[row-1][col-1])
-# for i in range(3):
-#     for j in range(3):
-#         top=grid[i][j] if j!=0 else float("inf")
-#         print(top)        
+r=row-1
+c=col-1
+path=[]
+while r!=None and c!=None:
+    path.append((r,c))
+    r,c=parent[r][c]
+print(path)    
