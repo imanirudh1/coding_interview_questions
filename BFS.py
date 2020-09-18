@@ -14,7 +14,7 @@ visited={}
 level={}
 parent={}
 bfs_travel_output=[]
-queue=Queue()
+queue=[]
 for node in adj_list.keys():
     visited[node]=False
     parent[node]=None
@@ -22,15 +22,16 @@ for node in adj_list.keys():
 s='A'
 visited[s]=True
 level[s]=0
-queue.put(s)
-while not queue.empty():
-    u=queue.get()
+queue.append(s)
+while not len(queue)==0:
+    u=queue.pop(0)
     bfs_travel_output.append(u)
     for v in adj_list[u]:
         if not visited[v]:
             visited[v]=True
             parent[v]=u
             level[v]=level[u]+1
-            queue.put(v)
+            queue.append(v)
 
 print(bfs_travel_output)
+print(parent)
