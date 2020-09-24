@@ -35,3 +35,9 @@ while not len(queue)==0:
 
 print(bfs_travel_output)
 print(parent)
+a='E'
+path=[]
+while parent[a] != None:
+    path.append(parent[a])
+    a=parent[a]
+print(path)    
