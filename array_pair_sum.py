@@ -11,5 +11,5 @@ def pair_sum(arr,target):
             seen.add(i)
         else:
             output.add((min(i,t),max(i,t)))            
-    return len(output)
+    return output
 print(pair_sum(arr,target))            
