@@ -1,4 +1,4 @@
-nums = [1, 3, 4, 2, 2, 1]
+nums = [1, 3, 4, 4, 2]
 def find_dublicate(nums):
     if len(nums) > 1:
         slow = nums[0]
