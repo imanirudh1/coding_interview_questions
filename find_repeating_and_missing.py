@@ -1,9 +1,7 @@
 x = 0
 y=0
 def getTwoElements(arr, n): 
-    global x, y 
-    x = 0
-    y = 0  
+    global x, y  
     xor1 = arr[0] 
     for i in range(1, n): 
         xor1 = xor1 ^ arr[i] 
