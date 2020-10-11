@@ -41,23 +41,38 @@
 # graph['start']['b'] = 2
 # print(graph)
 
-n = int(input())
-arr = [ [] for i in range(n) ] 
+# n = int(input())
+# arr = [ [] for i in range(n) ] 
+# for i in range(n):
+#     j = int(input())
+#     l=input()
+#     arr[i]=list(map(int,l))
+# print(arr)
+# count = 0
+# length=0
+# for i in range(n):
+#     for j in range(len(arr[i])):
+#         if arr[i][j] == 1:
+#             count += 1
+#         else:
+#             if count >= length:
+#                 length = count
+#                 count = 0
+#     count=0            
+#     print(length)
+#     length=0            
+
+n=int(input())
+strs=[]
 for i in range(n):
-    j = int(input())
-    l=input()
-    arr[i]=list(map(int,l))
-print(arr)
-count = 0
-length=0
-for i in range(n):
-    for j in range(len(arr[i])):
-        if arr[i][j] == 1:
-            count += 1
+    a=input()
+    strs.append(a)
+for j in range(len(strs)):
+    even=''
+    odd=''
+    for k in range(len(strs[j])):
+        if k % 2==0:
+            even+=strs[j][k]
         else:
-            if count >= length:
-                length = count
-                count = 0
-    count=0            
-    print(length)
-    length=0            
+            odd+=strs[j][k] 
+    print(even,odd)           
