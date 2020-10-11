@@ -6,7 +6,8 @@ def getTwoElements(arr, n):
     for i in range(1, n): 
         xor1 = xor1 ^ arr[i] 
     for i in range(1, n + 1): 
-        xor1 = xor1 ^ i       
+        xor1 = xor1 ^ i
+              
     print('Xor1 ',xor1)
     # set_bit_no = xor1 & ~(xor1 - 1) 
     set_bit_no = xor1 
