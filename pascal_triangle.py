@@ -1,14 +1,7 @@
-from operator import add
-
 def generate(numRows):
-    res = [[1]]
-    for i in range(1, numRows):
-        temp1 = res[-1] + [0]
-        print('TEMP 1 ',temp1)
-        temp2 = [0] + res[-1]
-        print('TEMP 2 ', temp2)
-        print('res before :',res)
-        res.append([temp1[i] + temp2[i] for i in range(len(temp1))])
-        print('res after :',res)
+    res = [[1] * (i + 1) for i in range(numRows)]
+    for i in range(2, numRows):
+        for j in range(1, i):
+            res[i][j]=res[i-1][j-1]+res[i-1][j]
     return res[:numRows]
 print(generate(5))    
