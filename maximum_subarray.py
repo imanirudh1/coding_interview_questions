@@ -1,4 +1,4 @@
-nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4,-9]
 def max_subarray(nums):
     total = 0
     max_sum = nums[0]
