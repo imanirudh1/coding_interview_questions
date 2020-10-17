@@ -7,5 +7,5 @@ def maxProfit(prices):
         elif prices[i]-min_val>max_profit:
             max_profit=prices[i]-min_val
     return max_profit        
-prices = [7, 1, 5, 3, 6, 4]
+prices = [7, 4, 5, 3, 6, 1]
 print(maxProfit(prices))
