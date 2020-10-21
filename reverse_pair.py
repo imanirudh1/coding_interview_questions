@@ -20,4 +20,4 @@ def reversePairs(nums):
     msort(nums)
     return cnt
 
-print(reversePairs([2,4,3,5,1]))
+print(reversePairs([40,25,19,12,9,6,2]))
