@@ -52,44 +52,36 @@
 #     	return S
 
 
-def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-        
+def fourSum(nums, target):       
     nums.sort()
     length=len(nums)    
     if (length<4):
         return []    
-    maxnum=nums[-1]        
-        
+    maxnum=nums[-1]             
     d={}    
     for i,num in enumerate(nums):
         d[num]=i
-    
-    ans=set()
-            
-    for i in range(length-3):
-            
+    ans=set()     
+    for i in range(length-3):    
         i_=nums[i]
         if (4*i_>target):
             break
         if (i_+3*maxnum<target):
-            continue
-            
-        for j in range(i+1,length-2):
-                
+            continue            
+        for j in range(i+1,length-2):                
             j_=nums[j]
             if (i_+3*j_>target):
                 break
             if (i_+j_+2*maxnum<target):
-                continue
-                
-            for k in range(j+1,length-1):
-                    
+                continue                
+            for k in range(j+1,length-1):                    
                 k_=nums[k]
-                missing=target-i_-j_-k_
-                    
+                missing=target-i_-j_-k_                    
                 if (missing<k_):
                     break
                 if (missing in d and d[missing]>k):
-                    ans.add((i_,j_,k_,missing))
-        
+                    ans.add((i_,j_,k_,missing))        
     return ans        
+nums = [1, 0, -1, 0, -2, 2]
+target = 0
+print(fourSum(nums,target))
