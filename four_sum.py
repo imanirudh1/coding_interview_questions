@@ -90,9 +90,10 @@ def fourSum(nums, target):
     if n==None or n < 4:
         return res
     nums = sorted(nums)
-    for i in range(n):
-
-        for j in range(i + 1, n):
+    i=0
+    while i < n:
+        j=i+1
+        while j< n:
             left = j + 1
             right = n - 1
             while left < right:
@@ -117,8 +118,31 @@ def fourSum(nums, target):
                         right-=1    
             while j + 1 < n and nums[j] == nums[j + 1]:
                 j += 1
+            j+=1    
         while i + 1 < n and nums[i] == nums[i + 1]:
             i += 1
+        i+=1    
     return res        
                
-print(fourSum(nums,target))
+print(fourSum(nums, target))
+
+## v1: hard coded, non-recursive solution for 4 sum.
+#     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+#         res = []
+#         nums = sorted(nums)
+        
+#         for i,n1 in enumerate(nums): #first val
+#             for j in range(i+1,len(nums)-2): #second val
+#                 l,h=j+1,len(nums)-1   #Pointers to search 3rd and 4th values in remaining sorted array. 
+#                 while l<h:
+#                     s = n1+nums[j]+nums[l]+nums[h]
+#                     if s == target:
+#                         t = sorted([n1,nums[j],nums[l],nums[h]])
+#                         if t not in res:
+#                             res.append(t)
+#                     if s<target:
+#                         l+=1
+#                     else:
+#                         h-=1
+        
+#         return res
