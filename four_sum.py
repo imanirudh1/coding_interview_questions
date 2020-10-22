@@ -52,36 +52,61 @@
 #     	return S
 
 
-def fourSum(nums, target):       
-    nums.sort()
-    length=len(nums)    
-    if (length<4):
-        return []    
-    maxnum=nums[-1]             
-    d={}    
-    for i,num in enumerate(nums):
-        d[num]=i
-    ans=set()     
-    for i in range(length-3):    
-        i_=nums[i]
-        if (4*i_>target):
-            break
-        if (i_+3*maxnum<target):
-            continue            
-        for j in range(i+1,length-2):                
-            j_=nums[j]
-            if (i_+3*j_>target):
-                break
-            if (i_+j_+2*maxnum<target):
-                continue                
-            for k in range(j+1,length-1):                    
-                k_=nums[k]
-                missing=target-i_-j_-k_                    
-                if (missing<k_):
-                    break
-                if (missing in d and d[missing]>k):
-                    ans.add((i_,j_,k_,missing))        
-    return ans        
+# def fourSum(nums, target):       
+#     nums.sort()
+#     length=len(nums)    
+#     if (length<4):
+#         return []    
+#     maxnum=nums[-1]             
+#     d={}    
+#     for i,num in enumerate(nums):
+#         d[num]=i
+#     ans=set()     
+#     for i in range(length-3):    
+#         i_=nums[i]
+#         if (4*i_>target):
+#             break
+#         if (i_+3*maxnum<target):
+#             continue            
+#         for j in range(i+1,length-2):                
+#             j_=nums[j]
+#             if (i_+3*j_>target):
+#                 break
+#             if (i_+j_+2*maxnum<target):
+#                 continue                
+#             for k in range(j+1,length-1):                    
+#                 k_=nums[k]
+#                 missing=target-i_-j_-k_                    
+#                 if (missing<k_):
+#                     break
+#                 if (missing in d and d[missing]>k):
+#                     ans.add((i_,j_,k_,missing))        
+#     return ans        
 nums = [1, 0, -1, 0, -2, 2]
 target = 0
+def fourSum(nums, target):
+    n = len(nums)
+    res=[]
+    if n==None or n < 4:
+        return res
+    nums = sorted(nums)
+    for i in range(n):
+        for j in range(i + 1, n):
+            left = j + 1
+            right = n - 1
+            while left < right:
+                total = nums[i] + nums[j] + nums[left] + nums[right]
+                if total == target:
+                    l = []
+                    l.append(nums[i])
+                    l.append(nums[j])
+                    l.append(nums[left])
+                    l.append(nums[right])
+                    res.append(l)
+                    leftVal = nums[left]
+                    while left < n and leftVal == nums[left]:
+                        left += 1
+                    rightVal = nums[right]
+                    while right < n and rightVal == nums[right]:
+                        right-=1      
 print(fourSum(nums,target))
