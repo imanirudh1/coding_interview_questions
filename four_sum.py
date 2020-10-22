@@ -146,3 +146,62 @@ print(fourSum(nums, target))
 #                         h-=1
         
 #         return res
+
+
+## v2: recursive approach of ksum
+#  keep doing recusrive calls until only 2 sum is needed to be found. 
+#  Once, 2 sum if found, add it to current element to make it 3 sum and return it.
+#  Keep doing n sum at each level and keep returning the list to the top level. 
+#  Finally, return everything at top. (This happens automatically!)
+
+    # def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+
+    #     def k_sum(self, nums: List[int], target: int, k) -> List[List[int]]:
+            
+    #         res = []
+            
+    #         if len(nums) < k:
+    #             return res
+            
+    #         if len(nums)==k and sum(nums)==target:
+    #             return [nums]
+            
+    #         if len(nums) == 0 or sum(nums[0:k])  > target or target > sum(nums[-k:]):
+    #             return []
+            
+    #         if k == 2:
+    #             return two_sum(self, nums, target)
+            
+            
+            
+    #         for i in range(len(nums)): #
+    #             sums_list = k_sum(self, nums[i+1:], target-nums[i], k-1)
+    #             for l in sums_list:
+    #                 if [nums[i]]+l not in res:
+    #                     res.append( [nums[i]]+l)
+
+    #         return res
+
+    #     def two_sum(self, nums, target):
+    #         ''' find all the combinations of 2 values having sum equal to target '''
+    #         t_sums = [] 
+    #         l,h=0,len(nums)-1
+    #         while l<h:
+    #             s = nums[l]+nums[h]
+    #             if s<target:
+    #                 l+=1
+    #             elif s>target:
+    #                 h-=1
+    #             else:
+    #                 t_sums.append([nums[l],nums[h]])
+    #                 l+=1
+    #                 h-=1
+                    
+    #         return t_sums
+        
+        
+    #     nums = sorted(nums)
+    #     return k_sum(self, nums, target, 4)
+    
+
+           
