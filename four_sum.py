@@ -91,6 +91,7 @@ def fourSum(nums, target):
         return res
     nums = sorted(nums)
     for i in range(n):
+
         for j in range(i + 1, n):
             left = j + 1
             right = n - 1
@@ -107,6 +108,17 @@ def fourSum(nums, target):
                     while left < n and leftVal == nums[left]:
                         left += 1
                     rightVal = nums[right]
-                    while right < n and rightVal == nums[right]:
-                        right-=1      
+                    while right > left and rightVal == nums[right]:
+                        right -= 1
+                else:
+                    if total < target:
+                        left += 1
+                    else:
+                        right-=1    
+            while j + 1 < n and nums[j] == nums[j + 1]:
+                j += 1
+        while i + 1 < n and nums[i] == nums[i + 1]:
+            i += 1
+    return res        
+               
 print(fourSum(nums,target))
