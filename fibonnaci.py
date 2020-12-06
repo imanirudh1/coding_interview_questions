@@ -37,3 +37,15 @@ def memo_fibo_lru(a):
     elif a>2:
         return memo_fibo(a-1)+memo_fibo(a-2)
 print(memo_fibo_lru(1000))    
+
+
+
+
+#Memonization
+def fibo(n,memo={}):
+    if n in memo:
+        return memo[n]
+    if n <=2:
+        return 1
+    memo[n]=fibo(n-1,memo) + fibo(n-2,memo)
+    return memo[n]
